@@ -2,6 +2,8 @@
 
 Agent-based model of tokenized carbon storage market. 
 
+There's a design document here: [Description](description.md)
+
 ### To Do
 
 - [ ] Figure out what's broken when I try and run it.
@@ -136,8 +138,10 @@ the bkcharts package explicitly.
   }
 ```
 
-### Marketsim Structure
+I tried the more complicated `50000_firms` example and it failed spectacularly with more cascading exceptions starting from an AssertionError. There's almost certainly something wrong with my setup. 
 
-I'm going back to look over our structure from high level view. 
+### Back to Marketsim
 
+In `simulation.py`, the call to `simulation.build_agents` passes in `'supplier'` as the second argument, but this doesn't exist? What is this object supposed to be? Here, it looks like a string is being passed in, but Supplier class is expecting an object containing parameters so it's failing.
 
+What parameters are you trying to pass in? 

@@ -3,7 +3,7 @@ import abce
 from abce import NotEnoughGoods
 
 # Create CRC dataframe from CSV, randomly select 100 suppliers, and output as a dictionary - records/tabular format
-supply = pd.read_csv('crc_supply.csv') 
+supply = pd.read_csv('crc_supply.csv')
 crc_sample = supply.sample(n=100) #EVENTUALLY WANT TO TAKE USER INPUT...FROM simulation.py?
 crc_list = crc_sample.to_dict('records')
 
@@ -33,11 +33,11 @@ class Supplier(abce.Agent, abce.Firm, abce.Trade):
 		self.sell('spotbuyer', j, # j = whoever the spot buyer is
 					good='CRC',
 					quantity=crc_qty, # m = list full amount of CRCs in account
-					price=market_price) # Price at time step t when buy order comes in  
+					price=market_price) # Price at time step t when buy order comes in
 
 	def sell_nori(self):
 		""" Sell NORI to Coinex when market_price > reserve_price """
 		self.sell('coinex', 0, # Sell token to Exchange 0 for market price of NORI, less transaction fee
 					good='NORI',
-					quantity=nori_qty, # Sell entire quantity of NORI at market_price 
+					quantity=nori_qty, # Sell entire quantity of NORI at market_price
 					price=market_price) # Market_price > reserve_price
