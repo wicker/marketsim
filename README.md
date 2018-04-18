@@ -1,9 +1,6 @@
 # marketsim
-Agent-based model of tokenized carbon storage market
 
-Run simulation.py
-
-Once we get simulation running, will need rudimentary UI and graphical outputs (plotly seems a little friendlier than matplitlib)
+Agent-based model of tokenized carbon storage market. Once we get simulation running, future work will include rudimentary UI and graphical outputs. Plotly seems a little friendlier than matplitlib.
 
 ### Usage
 
@@ -81,5 +78,3 @@ Traceback (most recent call last):
     raise Exception()
 Exception
 ```
-
-
