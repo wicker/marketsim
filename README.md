@@ -90,3 +90,48 @@ Traceback (most recent call last):
     raise Exception()
 Exception
 ```
+
+We get the simulation object just fine from line 33. 
+
+I cloned and installed the [ABCE Examples](https://github.com/AB-CE/examples) repo. 
+
+New virtualenv, installed from requirements.txt.
+
+```
+mkvirtualenv abce_examples
+pip install -r requirements.txt
+cd examples
+cd 2sectors
+python start.py
+```
+
+This file runs, returns the following, so I think we can ignore the bokeh/bkcharts messages.
+
+```
+The bokeh.charts API has moved to a separate 'bkcharts' package.
+
+This compatibility shim will remain until Bokeh 1.0 is released.
+After that, if you want to use this API you will have to install
+the bkcharts package explicitly.
+
+  warn(message)
+  Round0
+  Round1
+  Round2
+  Round3
+  Round4
+  Round5
+  Round6
+  Round7
+  Round8
+  Round9
+
+  time only simulation   0.01
+  time with data   0.11
+  {
+        "name": "abce",
+            "random_seed": 1524063332.0248885
+  }
+```
+
+I'm going back to look over our structure from high level view. 
