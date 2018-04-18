@@ -1,6 +1,18 @@
 # marketsim
 
-Agent-based model of tokenized carbon storage market. Once we get simulation running, future work will include rudimentary UI and graphical outputs. Plotly seems a little friendlier than matplitlib.
+Agent-based model of tokenized carbon storage market. 
+
+### To Do
+
+- [ ] Figure out what's broken when I try and run it.
+
+- [ ] In the supplier class, take a random draw of suppliers from [crc_supply.csv](crc_supply.csv) and use two pieces of data in the decision model. 
+
+- [ ] Where to put the supplier import piece - in suppliers.py or in the main simulation.py? 
+
+- [ ] Decide how to build the supplier queue.
+
+- [ ] Less important: develop a rudimentary UI and in graphical or tabular output, probably using Plotly. 
 
 ### Usage
 
