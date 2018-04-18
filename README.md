@@ -93,6 +93,8 @@ Exception
 
 We get the simulation object just fine from line 33. 
 
+### Verify ABCE runs at all with one of their examples
+
 I cloned and installed the [ABCE Examples](https://github.com/AB-CE/examples) repo. 
 
 New virtualenv, installed from requirements.txt.
@@ -134,4 +136,8 @@ the bkcharts package explicitly.
   }
 ```
 
+### Marketsim Structure
+
 I'm going back to look over our structure from high level view. 
+
+
