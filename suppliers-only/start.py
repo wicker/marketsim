@@ -22,10 +22,8 @@ class Supplier_Agent(abce.Agent):
     print("Round "+str(self.round)+": "+self.group+" "+self.county+" (ID "+str(self.id)+")")
 
   def whether_to_sell(self):
-    print('test')
-    #if (market_price > self.marg_cost):
-    #  print(market_price)#'sell')
-     # print(self.county+" (ID: "+str(self.id)+") had a margin cost of "+str(self.marg_cost)+" and sells")
+    if (market_price > self.marg_cost):
+      print("(ID: "+str(self.id)+") "+self.county+" sold with margin cost of "+str(self.marg_cost))
 
 # Preparation step! Nothing in here requires abce
 # Use Pandas to create a dataframe from the suppliers CSV
@@ -35,9 +33,20 @@ suppliers_csv_filename = 'crc_supply.csv'
 suppliers_list = []
 
 with open(suppliers_csv_filename, 'r') as csvfile:
-  suppliers_list = pandas.read_csv(csvfile)
+  suppliers_df = pandas.read_csv(csvfile)
 
-  suppliers_list = suppliers_list.sample(n=100)
+  suppliers_df = suppliers_df.sample(n=100)
+
+  # get access to each row of the dataframe
+  for i in range(1, len(suppliers_df)):
+    s = {
+      'id': suppliers_df.iloc[i].ID,
+      'county': suppliers_df.iloc[i].County_Soil,
+      'marg_cost': suppliers_df.iloc[i].marginal_cost,
+      'marg_qty': suppliers_df.iloc[i].marginal_qty
+    }
+    suppliers_list.append(s)
+    i = i + 1
 
 # Create simulation
 
