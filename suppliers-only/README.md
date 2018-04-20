@@ -1,8 +1,8 @@
 # Suppliers only
 
-- [ ] Define market price as a constant
+- [X] Define market price as a constant
 - [X] Load suppliers from the CSV
-- [ ] Create the suppliers as agents
-- [ ] Run simulation, see which sells
+- [X] Create the suppliers as agents
+- [X] Run simulation, see which sells
 
 

@@ -35,8 +35,6 @@ def main():
 	print(simulation)
 
 #	simulation.declare_round_endowment() IS THIS NECESSARY?
-	print('supplier', supplier)
-	exit()
 	suppliers = simulation.build_agents(Supplier, 'supplier', 100) # Put these in parameters.csv and use .build_agents_from_file
 	simulation.build_agents(Spotbuyer, 'spotbuyer', 100)
 	simulation.build_agents(Speculator, 'speculator', 1000)

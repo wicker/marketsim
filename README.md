@@ -145,3 +145,7 @@ I tried the more complicated `50000_firms` example and it failed spectacularly w
 In `simulation.py`, the call to `simulation.build_agents` passes in `'supplier'` as the second argument, but this doesn't exist? What is this object supposed to be? Here, it looks like a string is being passed in, but Supplier class is expecting an object containing parameters so it's failing.
 
 What parameters are you trying to pass in? 
+
+When I try and create a dict explicitly, I get an error that we're unable to hash a dict on a dict. 
+
+In the [50000_firms example](https://github.com/AB-CE/examples/tree/master/examples/50000_firms) they're 
