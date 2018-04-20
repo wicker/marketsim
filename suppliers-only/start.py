@@ -1,5 +1,4 @@
-import abce
-import csv
+import abce, pandas
 
 # Supplier Agent class
 #
@@ -22,26 +21,27 @@ class Supplier_Agent(abce.Agent):
   def print_info(self):
     print("Round "+str(self.round)+": "+self.group+" "+self.county+" (ID "+str(self.id)+")")
 
+  def whether_to_sell(self):
+    print('test')
+    #if (market_price > self.marg_cost):
+    #  print(market_price)#'sell')
+     # print(self.county+" (ID: "+str(self.id)+") had a margin cost of "+str(self.marg_cost)+" and sells")
+
 # Preparation step! Nothing in here requires abce
-# Create a list of suppliers from CSV file
-# Verify by printing info
+# Use Pandas to create a dataframe from the suppliers CSV
+# Select random 100 of the suppliers list
 
 suppliers_csv_filename = 'crc_supply.csv'
 suppliers_list = []
 
 with open(suppliers_csv_filename, 'r') as csvfile:
-  suppliers_csv = csv.reader(csvfile, delimiter=',', quotechar='"')
-  for line in suppliers_csv:
+  suppliers_list = pandas.read_csv(csvfile)
 
-    s = {
-      'id': line[0],
-      'county': line[1],
-      'marg_cost': line[2],
-      'marg_qty': line[3]
-    }
-    suppliers_list.append(s)
+  suppliers_list = suppliers_list.sample(n=100)
 
 # Create simulation
+
+market_price = 10.0
 
 simulation = abce.Simulation(name="Suppliers")
 
@@ -55,7 +55,7 @@ suppliers = simulation.build_agents(
 
 # Run the simulation
 
-for r in range(1):
+for r in range(3):
   simulation.advance_round(r)
-  suppliers.print_info()
+  suppliers.whether_to_sell()
 
