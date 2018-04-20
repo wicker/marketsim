@@ -46,7 +46,6 @@ with open(suppliers_csv_filename, 'r') as csvfile:
       'marg_qty': suppliers_df.iloc[i].marginal_qty
     }
     suppliers_list.append(s)
-    i = i + 1
 
 # Create simulation
 
